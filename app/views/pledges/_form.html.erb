@@ -1,0 +1,42 @@
+<p div="widget">
+  <%= @pledge.loan.borrower.name %> has invited friends & family to help fund a loan
+  for <%= number_to_currency(@pledge.loan.principal) %>.
+</p>
+
+<%= render 'loans/remaining', loan: @pledge.loan %>
+
+<%= form_for @pledge do |f| %>
+
+  <%= render partial: 'layouts/base_errors', locals: {object: @pledge} %>
+
+  <div class="form-group row <%= error_class @pledge, :amount %> widget">
+    <div class="col-xs-12 col-sm-5">
+      <%= f.label :amount do %>
+        <%= label_or_full_error @pledge, :amount, 'How much will you pledge to lend?' %>
+      <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-7">
+      <div class="input-group">
+        <div class="input-group-addon">$</div>
+        <%= f.text_field :amount, class: 'form-control', autocomplete: 'off', autocorrect: 'off', autofocus: true, disabled: disabled %>
+        <div class="input-group-addon">.00</div>
+      </div>
+    </div>
+  </div>
+
+  <%= f.hidden_field :loan_id %>
+
+  <hr>
+
+  <% if @pledge.new_record? %>
+    <%= f.submit 'Pledge Amount', class: 'btn btn-primary btn-block' %>
+
+    <div class="buttons">
+      <div class="row">
+        <div class="col-xs-4 small">
+          <%= link_to 'Cancel', root_path %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

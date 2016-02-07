@@ -1,0 +1,74 @@
+<%= form_for @loan do |f| %>
+
+  <%= render partial: 'layouts/base_errors', locals: {object: @loan} %>
+
+  <div class="form-group row <%= error_class @loan, :reason %>">
+    <div class="col-xs-12 col-sm-12">
+      <%= f.label :reason, "Why do you need this loan?" %>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <%= f.text_area :reason, class: 'form-control', rows: 3, autofocus: true, disabled: disabled %>
+    </div>
+  </div>
+
+  <div class="form-group row <%= error_class @loan, :principal %>">
+    <div class="col-xs-12 col-sm-5">
+      <%= f.label :principal do %>
+        <%= label_or_full_error @loan, :principal, 'How much do you need?' %>
+      <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-7">
+      <div class="input-group">
+        <div class="input-group-addon">$</div>
+        <%= f.text_field :principal, class: 'form-control', autocomplete: 'off', autocorrect: 'off', disabled: disabled %>
+        <div class="input-group-addon">.00</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row <%= error_class @loan, :term_in_months %>">
+    <div class="col-xs-12 col-sm-5">
+      <%= f.label :term_in_months do %>
+        <%= label_or_full_error @loan, :term_in_months, 'How long do you need to repay it?' %>
+      <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-7">
+      <div class="input-group">
+        <%= f.text_field :term_in_months, class: 'form-control', autocomplete: 'off', autocorrect: 'off', disabled: disabled %>
+        <div class="input-group-addon">months</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row <%= error_class @loan, :interest_apr %> widget">
+    <div class="col-xs-12 col-sm-5">
+      <%= f.label :interest_apr do %>
+        <%= label_or_full_error @loan, :interest_apr, 'How much interest are you willing to pay?' %>
+      <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-7">
+      <div class="input-group">
+        <%= f.text_field :interest_apr, class: 'form-control', autocomplete: 'off', autocorrect: 'off', disabled: disabled %>
+        <div class="input-group-addon">% per annum</div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <% if @loan.new_record? %>
+    <%= f.submit 'Create Loan', class: 'btn btn-primary btn-block' %>
+
+    <div class="note very-small text-muted text-center">
+      When you create a loan, you'll have 14 days to have your loan fully funded, otherwise no-one pays.
+    </div>
+
+    <div class="buttons">
+      <div class="row">
+        <div class="col-xs-4 small">
+          <%= link_to 'Cancel', root_path %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

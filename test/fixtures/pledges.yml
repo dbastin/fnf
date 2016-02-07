@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  loan: one
+  lender: jessica
+  amount: 100
+
+two:
+  loan: one
+  lender: jessica
+  amount: 100

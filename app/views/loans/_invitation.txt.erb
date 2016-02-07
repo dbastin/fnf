@@ -1,0 +1,12 @@
+Hi,
+
+I'm trying to fund a loan. Would you be able to help?
+
+If you'd like to, please sign-up to Kazoo - Friends & Family by clicking here: <%= new_lenders_url(invitation_code: @loan.invitation_code) %>
+
+If you're already a Kazoo - Friends & Family member, just click here <%= new_invitations_url %> and link this loan request using this invitation code: <%= @loan.invitation_code %>
+
+Kind Regards
+
+
+<%= @current_user.name %>

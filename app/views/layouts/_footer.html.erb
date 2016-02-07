@@ -1,0 +1,21 @@
+<hr/>
+
+<div class="row widget">
+
+  <div class="col-xs-3 small">
+    <%= link_to 'Home', root_path %>
+  </div>
+
+  <div class="col-xs-6 small text-center ">
+    &nbsp;
+  </div>
+
+  <div class="col-xs-3 small text-right logout">
+    <%= link_to 'Log out', logout_path, method: :post %>
+  </div>
+
+</div>
+
+<div class="text-center text-very-muted very-small">
+  &copy; Kazoo <%= Time.zone.now.year %>
+</div>

@@ -1,0 +1,91 @@
+// import bs variables to allow $variable: $variable assignment
+@import "variables";
+
+a:hover {
+  text-decoration: none;
+}
+
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:active {
+  color: darken($brand-primary, 12%);
+  border: 1px solid lighten($brand-primary, 42%);
+  background-color: lighten($brand-primary, 42%);
+  box-shadow: none;
+}
+
+.btn-secondary:hover {
+  background-position: 0 -15px;
+  background-color: lighten($brand-primary, 25%);
+  color: darken($brand-primary, 20%);
+  border-color: lighten($brand-primary, 25%);
+}
+
+.btn-nav,
+.btn-nav:hover,
+.btn-nav:active {
+  color: $gray-light;
+  border: 1px solid $gray-lighter;
+  background-color: white;
+  box-shadow: none;
+  font-size: 80% !important;
+}
+
+.btn-nav:hover {
+  background-position: 0 -15px;
+  background-color: white;
+  color: darken($gray-light, 10%);
+  border-color: darken($gray-lighter, 10%);
+}
+
+.btn-block {
+  padding: 12px;
+  margin: 0 auto 24px;
+  //  max-width: 420px;
+}
+
+// over-ride default text-success etc. which darken the brand color
+.text-success {
+  color: $brand-success;
+}
+
+.text-danger {
+  color: $brand-danger;
+}
+
+.text-warning {
+  color: $brand-warning;
+}
+
+.text-info {
+  color: $brand-info;
+}
+
+.text-primary {
+  color: $brand-primary;
+}
+
+.text-added {
+  color: $gray-lightish;
+}
+
+.navbar-toggle {
+  border-color: $gray-lighter;
+  margin: 0 0 10px 10px;
+
+  span.icon-bar {
+    background-color: $gray-light;
+  }
+}
+
+.label {
+  font-weight: $headings-font-weight;
+}
+
+// wide
+@media (min-width: 767px) {
+  .alert-help,
+  .fake-eleven {
+    max-width: 91.667%
+  }
+}

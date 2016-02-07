@@ -1,0 +1,11 @@
+<%= form_for @lender do |f| %>
+  <%= render partial: 'layouts/base_errors', locals: {object: @lender} %>
+  <%= render partial: 'people/form', locals: {f: f, person: @lender} %>
+  <%= f.fields_for :invitations do |i| %>
+    <%= i.hidden_field :loan_id %>
+  <% end %>
+  <div class="note widget text-center">
+    <%= link_to 'Already have a Kazoo - Family & Friends account? Sign in and enter your invitation code.', login_path, class: 'text-success' %>
+  </div>
+<% end %>
+

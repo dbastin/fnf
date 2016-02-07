@@ -1,0 +1,28 @@
+<div class="banner">
+  <h2>
+    Pledges
+  </h2>
+</div>
+
+<% if @current_user.pledges.none? %>
+  <div class="widget">
+    You haven't help fund any loans yet.
+  </div>
+<% else %>
+  <table class="table clickable-rows">
+    <% @current_user.pledges.each do |pledge| %>
+      <% loan = pledge.loan %>
+      <tr data-url="<%= pledge_path pledge %>">
+        <td>
+          <%= status_label(loan) %>
+        </td>
+        <td class="text-muted">
+          On <%= pledge.created_at.strftime('%e %b %Y') %>, you pledged <%= number_to_currency(pledge.amount) %>
+          to <%= loan.borrower.name %> to help fund a loan for <%= number_to_currency(loan.principal) %>.
+          This is a <%= loan.term_in_months %> month loan at <%= loan.interest_apr %>% interest per
+          annum.
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

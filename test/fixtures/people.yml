@@ -1,0 +1,31 @@
+# Borrowers - Boys
+
+fred:
+  type: Borrower
+  name: Fred Stills
+  email: fred@example.com
+  crypted_password: "$2a$10$MV/kNxqFSN7Pq3/ljUEgEeaBYd.bVFpL9gbKj1LoU81pEdf2w9FHq"
+  salt: 8CnRKDhg26spPKZfBwNB
+
+ted:
+  type: Borrower
+  name: Ted Baxter
+  email: ted@exmaple.com
+  crypted_password: "$2a$10$MV/kNxqFSN7Pq3/ljUEgEeaBYd.bVFpL9gbKj1LoU81pEdf2w9FHq"
+  salt: 8CnRKDhg26spPKZfBwNB
+
+# Lenders - Girls
+
+sarah:
+  type: Lender
+  name: Sarah Parker
+  email: sarah@example.com
+  crypted_password: "$2a$10$MV/kNxqFSN7Pq3/ljUEgEeaBYd.bVFpL9gbKj1LoU81pEdf2w9FHq"
+  salt: 8CnRKDhg26spPKZfBwNB
+
+jessica:
+  type: Lender
+  name: Jessica Jones
+  email: jessica@exmaple.com
+  crypted_password: "$2a$10$MV/kNxqFSN7Pq3/ljUEgEeaBYd.bVFpL9gbKj1LoU81pEdf2w9FHq"
+  salt: 8CnRKDhg26spPKZfBwNB

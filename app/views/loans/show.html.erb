@@ -1,0 +1,9 @@
+<h2>Loan</h2>
+
+<%= render 'loans/remaining', loan: @loan %>
+
+<%= render 'form', disabled: true %>
+
+<% if @loan.pending? %>
+  <%= mail_to '', 'Invite Friends & Family', subject: 'Would you like to help me fund a loan?', body: "#{render partial: 'invitation.txt.erb'}", class: 'btn btn-block btn-primary widget' %>
+<% end %>

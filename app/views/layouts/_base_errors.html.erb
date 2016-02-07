@@ -1,0 +1,5 @@
+<% if object.errors[:base].any? %>
+  <% object.errors[:base].each() do |msg| %>
+    <p class="base-error"><%= msg %></p>
+  <% end %>
+<% end %>

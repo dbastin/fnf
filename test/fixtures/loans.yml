@@ -1,0 +1,15 @@
+one:
+  borrower: fred
+  principal: 1000
+  interest_apr: 9.99
+  term_in_months: 12
+  reason: Food
+  invitation_code: <%= SecureRandom.urlsafe_base64 %>
+
+two:
+  borrower: fred
+  principal: 500
+  interest_apr: 4.50
+  term_in_months: 12
+  reason: Clothes
+  invitation_code: <%= SecureRandom.urlsafe_base64 %>

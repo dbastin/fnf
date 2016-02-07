@@ -1,0 +1,14 @@
+@import "variables";
+@import "mixins";
+
+// wide
+@media (min-width: 767px) {
+}
+
+// narrow
+@media (max-width: 768px) {
+  .flash {
+    position: inherit;
+    margin-top: 0;
+  }
+}

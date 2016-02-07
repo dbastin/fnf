@@ -1,0 +1,53 @@
+<div class="banner">
+  <h2>
+    Your Loans
+  </h2>
+</div>
+
+<% if @current_user.loans.none? %>
+
+  <div class="widget">
+    You haven't created any loans yet. Create a loan using our loan builder.
+  </div>
+  <%= link_to 'Create A Loan', new_loan_path, class: 'btn btn-primary btn-block' %>
+
+<% else %>
+
+  <table class="table clickable-rows">
+    <% @current_user.loans.each do |loan| %>
+      <tr data-url="<%= loan_path loan %>">
+        <td>
+          <%= status_label(loan) %>
+        </td>
+        <td>
+          <%= link_to "#{loan.created_at.strftime('%e %b %Y')} - #{end_date(loan)}", loan_path(loan) %>
+          <br>
+
+          <div class="text-muted">
+            <%= "#{loan.term_in_months} month term" %>
+          </div>
+        </td>
+        <td>
+          <%= number_to_currency(loan.principal) %>
+        </td>
+        <td>
+          <%= "#{loan.interest_apr}% p.a." %>
+        </td>
+      </tr>
+      <% if loan.pending? %>
+        <tr data-url="<%= loan_path loan %>">
+          <td>
+            &nbsp;
+          </td>
+          <td colspan="3" class="text-muted">
+            <%= number_to_currency(loan.remaining) %> and <%= days_remaining(loan) %> days remaining
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+
+  <%= link_to 'Create Another Loan', new_loan_path, class: 'btn btn-primary btn-block' %>
+
+<% end %>
+

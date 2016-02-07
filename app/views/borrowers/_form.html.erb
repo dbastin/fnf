@@ -1,0 +1,5 @@
+<%= form_for @borrower do |f| %>
+  <%= render partial: 'layouts/base_errors', locals: {object: @borrower} %>
+  <%= render partial: 'people/form', locals: {f: f, person: @borrower} %>
+<% end %>
+

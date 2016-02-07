@@ -1,0 +1,29 @@
+<div class="banner">
+  <h2>
+    Loan Requests
+  </h2>
+</div>
+
+<table class="table">
+  <% @current_user.invitations.each do |invitation| %>
+    <% loan = invitation.loan %>
+    <tr>
+      <td>
+        <%= status_label(loan) %>
+      </td>
+      <td>
+        On <%= loan.created_at.strftime('%e %b %Y') %>, <%= loan.borrower.name %> asked friends & family to help
+        fund a loan for <%= number_to_currency(loan.principal) %>. So far, <%= number_to_currency(loan.pledged) %> has
+        been pledged. This is a <%= loan.term_in_months %> month loan at <%= loan.interest_apr %>% interest per
+        annum.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <%= (link_to 'Pledge To Fund This Loan', new_pledge_path(loan.invitation_code), class: 'btn btn-primary btn-block') if loan.pending? %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Link Another Loan Request', new_invitations_path, class: 'btn btn-secondary btn-block' %>

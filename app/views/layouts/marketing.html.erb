@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<%= render 'layouts/head' %>
+
+<body class="marketing">
+
+<div class="container marketing">
+
+  <div class="row widget" id="header">
+
+    <div class="pull-right">
+      <div class="btn btn-success">
+        <%= link_to 'Sign Up', new_borrowers_path, style: 'color: white;' %>
+      </div>
+      <span style="margin-left: 10px;">
+        <%= link_to 'Login', login_path %>
+      </span>
+    </div>
+
+  </div>
+
+  <div id="main">
+    <%= yield %>
+  </div>
+
+  <div id="footer">
+    <%= render partial: 'layouts/minimal_footer' %>
+  </div>
+
+</div>
+
+</body>
+</html>

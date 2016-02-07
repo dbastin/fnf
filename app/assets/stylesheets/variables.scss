@@ -1,0 +1,30 @@
+// additional colors
+// gray-light (aka text-muted) and gray-lighter are also used
+$highlight: #ffc;
+$gray-lightish: #ccc; // between bs gray-light and gray-lighter
+
+// assign colors too bootstrap types
+//$brand-primary: #f66a50;
+//$brand-info: #36819a; // #d04481;
+//$brand-danger: #e34528;
+//$brand-warning: $gray-lightish;
+//$brand-success: #5dc981;
+
+// increase base font
+$font-size-base: 18px;
+
+$font-family-sans-serif: "adelle-sans", Helvetica, Arial, sans-serif;
+$headings-font-weight: 600;
+
+// import bs variables to allow bootstrap variables to be assigned after this point
+@import "bootstrap/variables";
+
+// hide button border
+$btn-primary-border: $brand-primary;
+$btn-info-border: $brand-info;
+$btn-danger-border: $brand-danger;
+$btn-warning-border: $brand-warning;
+$btn-success-border: $brand-success;
+
+// make table borders same as hr
+$table-border-color: $gray-lighter;

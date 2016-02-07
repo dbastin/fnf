@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<%= render 'layouts/head' %>
+<body>
+<div class="container minimal">
+  <% if flash[:notice] %>
+    <p class="minimal-flash "><%= flash[:notice] %></p>
+  <% end %>
+
+  <div class="hidden-xs">
+    <h4 class="logo">
+      <%= link_to 'Kazoo - Friends & Family', root_path %>
+    </h4>
+  </div>
+
+  <div id="main">
+    <%= yield %>
+  </div>
+
+  <div id="footer">
+    <%= render partial: 'layouts/minimal_footer' %>
+  </div>
+</div>
+</body>
+</html>

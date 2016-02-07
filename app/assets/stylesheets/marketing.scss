@@ -1,0 +1,33 @@
+@import "variables";
+
+body.marketing {
+  background-color: white;
+}
+
+div.marketing {
+  margin: 0 auto;
+  max-width: 720px !important;
+
+  color: #666;
+
+  path {
+    fill: #666;
+  }
+
+  // wide
+  @media (min-width: 767px) {
+  }
+
+  // narrow
+  @media (max-width: 767px) {
+    h1 {
+      font-size: 38px;
+      line-height: 41px;
+    }
+
+    h2 {
+      font-size: 30px;
+      line-height: 36px;
+    }
+  }
+}
