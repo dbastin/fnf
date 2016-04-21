@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/dbastin/fnf.png?branch=master)](https://travis-ci.org/dbastin/fnf)
+
 Kazoo - Friends & Family
 ========================
 
