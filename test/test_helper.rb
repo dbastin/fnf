@@ -6,7 +6,8 @@ Coveralls.wear!
 
 SimpleCov.start 'rails' do
   SimpleCov.formatters = [
-    SimpleCov::Formatter::HTMLFormatter
+    SimpleCov::Formatter::HTMLFormatter,
+    Coveralls::SimpleCov::Formatter
   ]
 
   add_filter '/test/'
