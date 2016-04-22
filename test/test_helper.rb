@@ -1,6 +1,9 @@
 require 'simplecov'
 ENV['RAILS_ENV'] ||= 'test'
 
+require 'coveralls'
+Coveralls.wear!
+
 SimpleCov.start 'rails' do
   SimpleCov.formatters = [
     SimpleCov::Formatter::HTMLFormatter

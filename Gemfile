@@ -24,6 +24,8 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'coveralls', require: false
+
 group :test do
   gem 'simplecov'
 end
