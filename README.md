@@ -1,8 +1,8 @@
-[![Build Status](https://travis-ci.org/dbastin/fnf.svg?branch=master)](https://travis-ci.org/dbastin/fnf)
-[![Coverage Status](https://coveralls.io/repos/github/dbastin/fnf/badge.svg?branch=master)](https://coveralls.io/github/dbastin/fnf?branch=master)
-
 Kazoo - Friends & Family
 ========================
+
+[![Build Status](https://travis-ci.org/dbastin/fnf.svg?branch=master)](https://travis-ci.org/dbastin/fnf)
+[![Coverage Status](https://coveralls.io/repos/github/dbastin/fnf/badge.svg?branch=master)](https://coveralls.io/github/dbastin/fnf?branch=master)
 
 This is an implementation of a hypothetical friends & family lending product for a hypothetical company called Kazoo Finance.
 
