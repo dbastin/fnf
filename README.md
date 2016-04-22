@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/dbastin/fnf.svg?branch=master)](https://travis-ci.org/dbastin/fnf)
+[![Coverage Status](https://coveralls.io/repos/github/dbastin/fnf/badge.svg?branch=master)](https://coveralls.io/github/dbastin/fnf?branch=master)
 
 Kazoo - Friends & Family
 ========================
